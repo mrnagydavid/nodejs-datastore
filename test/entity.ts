@@ -1138,6 +1138,10 @@ describe('entity', () => {
           'nestedArrayVariants[].a[].b',
           'alpha[]',
           'omega',
+          'entityCompletelyExcluded.*',
+          'entityPropertyExcluded.name',
+          'entityArrayCompletelyExcluded[].*',
+          'entityArrayPropertyExcluded[].name',
         ],
 
         data: {
@@ -1218,6 +1222,14 @@ describe('entity', () => {
           alpha: ['beta', 'gamma'],
 
           omega: ['beta', 'gamma'],
+
+          entityCompletelyExcluded: null,
+
+          entityPropertyExcluded: null,
+
+          entityArrayCompletelyExcluded: null,
+
+          entityArrayPropertyExcluded: null,
         },
       };
 
@@ -1523,6 +1535,19 @@ describe('entity', () => {
                 },
               ],
             },
+          },
+          entityCompletelyExcluded: {
+            nullValue: 0,
+            excludeFromIndexes: true,
+          },
+          entityPropertyExcluded: {
+            nullValue: 0,
+          },
+          entityArrayCompletelyExcluded: {
+            nullValue: 0,
+          },
+          entityArrayPropertyExcluded: {
+            nullValue: 0,
           },
         },
       };
